@@ -1,0 +1,23 @@
+
+spring:
+application:
+name: demoboard
+profiles:
+active: default
+
+server:
+port: 9093
+---
+spring:
+config:
+activate:
+on-profile: default
+data:
+mongodb:
+host: localhost
+port: 27017
+authentication-database: ${spring.application.name}
+database: ${spring.application.name}
+username: ${spring.application.name}
+password: ${spring.application.name}
+uri: mongodb://localhost:27017/${spring.application.name}
